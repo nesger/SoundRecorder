@@ -1,13 +1,10 @@
 package com.danielkim.soundrecorder.activities;
 
-import android.app.Activity;
 import android.os.Bundle;
-import android.os.PersistableBundle;
-import android.preference.PreferenceActivity;
 import android.support.annotation.Nullable;
-import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 
 import com.danielkim.soundrecorder.R;
 import com.danielkim.soundrecorder.fragments.SettingsFragment;
@@ -31,6 +28,13 @@ public class SettingsActivity extends android.support.v7.app.ActionBarActivity {
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setDisplayShowHomeEnabled(true);
         }
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SettingsActivity.this.onBackPressed();
+            }
+        });
 
         getFragmentManager()
                 .beginTransaction()
