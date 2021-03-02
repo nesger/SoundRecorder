@@ -29,12 +29,7 @@ public class SettingsActivity extends android.support.v7.app.ActionBarActivity {
             actionBar.setDisplayShowHomeEnabled(true);
         }
 
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                SettingsActivity.this.onBackPressed();
-            }
-        });
+        toolbar.setNavigationOnClickListener(view -> SettingsActivity.this.onBackPressed());
 
         getFragmentManager()
                 .beginTransaction()
